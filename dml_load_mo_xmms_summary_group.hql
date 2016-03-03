@@ -1,5 +1,6 @@
 use cram;
 add jar hdfs:///lib/brickhouse-0.7.1-SNAPSHOT.jar;
+add jar hdfs:///lib/HiveUtils-0.0.2.jar;
 CREATE TEMPORARY FUNCTION collect AS 'brickhouse.udf.collect.CollectUDAF';
 INSERT INTO TABLE mo_xmms_summary_group
 select
@@ -41,10 +42,10 @@ hstack_vendor,
 wafer,
 media_tracecode,
 hdd_test_run_start_date_time,
-fiscal_week,
+fiscal_week_id,
 month_name,
 fiscal_year,
-fiscal_quarter,
+fiscal_quarter_id,
 defects,
 incoming_head,
 interface,
